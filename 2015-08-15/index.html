@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8" />
+        <title>Google Maps API v3: Criando um mapa personalizado</title>
+    </head>
+ 
+    <body>
+        <fieldset>
+            <label for="localizacao">Coloque o endereço aqui:</label>
+            <input type="text" id="localizacao">
+            <button type="button" id="procurar" onclick="pegarValor()">Procurar</button>
+        </fieldset>
+        <div id="mapa" style="height: 500px; width: 700px">
+        </div>
+ 
+        <!-- Maps API Javascript -->
+        <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB6t-Rb61j_gB8kW6cqCk241e41RPRoYCg&amp;sensor=false"></script>
+ 
+        <!-- Arquivo de inicialização do mapa -->
+        <script src="js/mapa.js"></script>
+    </body>
+</html>
