@@ -4,7 +4,7 @@
         <meta charset="utf-8" />
         <title>Google Maps API v3: Criando um mapa personalizado</title>
     </head>
- 
+
     <body>
         <fieldset>
             <label for="localizacao">Coloque o endereço aqui:</label>
@@ -13,11 +13,40 @@
         </fieldset>
         <div id="mapa" style="height: 500px; width: 700px">
         </div>
- 
+
         <!-- Maps API Javascript -->
         <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyB6t-Rb61j_gB8kW6cqCk241e41RPRoYCg&amp;sensor=false"></script>
- 
+
+        <!-- Jquery -->
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"> </script>
+
         <!-- Arquivo de inicialização do mapa -->
         <script src="js/mapa.js"></script>
+        <script type="text/javascript">
+
+
+          function carregarPontos() {
+
+          $.getJSON('js/jsonMap.js', function(pontos) {
+
+              $.each(pontos, function(index, ponto) {
+
+                  var marker = new google.maps.Marker({
+                      position: new google.maps.LatLng(ponto.Latitude, ponto.Longitude),
+                      title: "Meu ponto personalizado! :-D",
+                      map: map
+                      //icon: 'img/marcador.png'
+                  });
+
+              });
+
+          });
+
+        }
+
+        carregarPontos();
+
+
+        </script>
     </body>
 </html>
